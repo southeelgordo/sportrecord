@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 10 10 20;
+  --foreground: 240 240 255;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: #0a0a14;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 255, 150, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(0, 150, 255, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(150, 0, 255, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(255, 0, 150, 0.1) 0px, transparent 50%);
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* 全新深色霓虹主题样式 */
+.neon-border {
+  border: 1px solid rgba(0, 255, 150, 0.3);
+  box-shadow: 
+    0 0 10px rgba(0, 255, 150, 0.2),
+    inset 0 0 10px rgba(0, 255, 150, 0.1);
+}
+
+.neon-border-blue {
+  border: 1px solid rgba(0, 150, 255, 0.3);
+  box-shadow: 
+    0 0 10px rgba(0, 150, 255, 0.2),
+    inset 0 0 10px rgba(0, 150, 255, 0.1);
+}
+
+.neon-border-purple {
+  border: 1px solid rgba(150, 0, 255, 0.3);
+  box-shadow: 
+    0 0 10px rgba(150, 0, 255, 0.2),
+    inset 0 0 10px rgba(150, 0, 255, 0.1);
+}
+
+.dark-card {
+  @apply bg-[#151520] backdrop-blur-xl rounded-2xl border border-[#1a1a2e];
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dark-card-hover {
+  @apply dark-card transition-all duration-300 hover:border-[#00ff96] hover:shadow-[0_0_20px_rgba(0,255,150,0.3)];
+}
+
+.btn-neon {
+  @apply bg-[#00ff96] text-[#0a0a14] font-bold px-6 py-3 rounded-lg shadow-[0_0_20px_rgba(0,255,150,0.5)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,150,0.7)] hover:scale-105;
+}
+
+.btn-neon-blue {
+  @apply bg-[#0096ff] text-white font-bold px-6 py-3 rounded-lg shadow-[0_0_20px_rgba(0,150,255,0.5)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,150,255,0.7)] hover:scale-105;
+}
+
+.btn-neon-purple {
+  @apply bg-[#9600ff] text-white font-bold px-6 py-3 rounded-lg shadow-[0_0_20px_rgba(150,0,255,0.5)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(150,0,255,0.7)] hover:scale-105;
+}
+
+.input-dark {
+  @apply w-full px-4 py-3 rounded-lg border border-[#2a2a3e] bg-[#1a1a2e] text-white placeholder:text-[#666] focus:border-[#00ff96] focus:ring-2 focus:ring-[#00ff96]/20 outline-none transition-all;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-[#aaa] transition-all duration-200 hover:bg-[#1a1a2e] hover:text-white cursor-pointer;
+}
+
+.sidebar-item-active {
+  @apply sidebar-item bg-[#1a1a2e] text-[#00ff96] border-l-4 border-[#00ff96];
+}
+
+.badge-neon {
+  @apply px-3 py-1 rounded-full text-sm font-medium bg-[#00ff96]/20 text-[#00ff96] border border-[#00ff96]/30;
+}
+
+.badge-neon-blue {
+  @apply px-3 py-1 rounded-full text-sm font-medium bg-[#0096ff]/20 text-[#0096ff] border border-[#0096ff]/30;
+}
+
+.badge-neon-yellow {
+  @apply px-3 py-1 rounded-full text-sm font-medium bg-[#ffaa00]/20 text-[#ffaa00] border border-[#ffaa00]/30;
+}
+
+.badge-neon-red {
+  @apply px-3 py-1 rounded-full text-sm font-medium bg-[#ff0066]/20 text-[#ff0066] border border-[#ff0066]/30;
+}
+
+/* 动画效果 */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 150, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 150, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* 渐变文字 */
+.gradient-text {
+  @apply bg-gradient-to-r from-[#00ff96] via-[#0096ff] to-[#9600ff] bg-clip-text text-transparent;
+}
+
+/* 网格背景 */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 255, 150, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 150, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
