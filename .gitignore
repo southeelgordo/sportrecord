@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# env files
+.env
+.env.*
+*.env
+*.env.*
+
+# build outputs
+.next/
+dist/
+out/
+.turbo/
+
+# macOS
+.DS_Store
